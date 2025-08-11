@@ -29,4 +29,4 @@ To run the **Code Explainer** project:
 
 3. **Run Explainer Pipeline** – Use `explainer_pipeline.py` (client-side) to:  
    - Send code to the API endpoint.  
-   - Receive and display explanations in a human-readable format.  
+   - Receive and display explanations in a human-readable format. 
