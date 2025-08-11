@@ -14,7 +14,7 @@ The backend is powered by **StarCoder2-15B** deployed on **Modal Labs**.
 - **Torch** – Deep learning framework
 
 ---
-⚙️ Execution Steps
+⚙️ Execution Steps 
 1️⃣ Deploy the Model on Modal Labs
 Use starcoder_reviewer.py to host the StarCoder2-15B model.
 This script will:
@@ -32,7 +32,11 @@ php-template
 Copy
 Edit
 https://<your-app-name>--<username>.modal.run
-This API accepts POST requests containing source code and returns AI-generated explanations.
+This API:
+
+Accepts POST requests containing source code.
+
+Returns AI-generated explanations in response.
 
 3️⃣ Run the Explainer Pipeline
 Use explainer_pipeline.py (client-side) to:
@@ -40,3 +44,4 @@ Use explainer_pipeline.py (client-side) to:
 Send code to the API endpoint.
 
 Receive and display the explanation in a human-readable format.
+
