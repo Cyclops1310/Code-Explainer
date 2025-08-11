@@ -14,64 +14,29 @@ The backend is powered by **StarCoder2-15B** deployed on **Modal Labs**.
 - **Torch** – Deep learning framework
 
 ---
-Execution :
+⚙️ Execution Steps
+1️⃣ Deploy the Model on Modal Labs
+Use starcoder_reviewer.py to host the StarCoder2-15B model.
+This script will:
 
-Deploy the Model on Modal Labs
+Create a Modal application.
 
-First, we need to host our StarCoder2 model on Modal Labs using the starcoder_reviewer.py script.
+Load the bigcode/starcoder2-15b model from Hugging Face.
 
-This script:
+Set up an API endpoint for sending code and receiving explanations.
 
-Creates a Modal app.
-
-Loads the bigcode/starcoder2-15b model from Hugging Face.
-
-Sets up an API endpoint so we can send code and get explanations back.
-
-Set Up the Backend API
-
-Once deployed, Modal gives us an endpoint URL like:
+2️⃣ Set Up the Backend API
+Once deployed, Modal will provide an API endpoint, for example:
 
 php-template
 Copy
 Edit
-https://<your-app-name>--<function-name>.modal.run
-This API will accept POST requests with code and return AI-generated explanations.
+https://<your-app-name>--<username>.modal.run
+This API accepts POST requests containing source code and returns AI-generated explanations.
 
-Run the Explainer Pipeline
+3️⃣ Run the Explainer Pipeline
+Use explainer_pipeline.py (client-side) to:
 
-The explainer_pipeline.py file is our client-side script.
+Send code to the API endpoint.
 
-It:
-
-Reads code from a file or user input.
-
-Sends the code to our Modal API endpoint.
-
-Receives and displays the AI-generated explanation.
-
-Testing with Example Code
-
-We can test the pipeline by:
-
-Providing a small C, C++, Python, or Java snippet.
-
-Example:
-
-c
-Copy
-Edit
-#include <stdio.h>
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
-The API should return an explanation of what the code does.
-
-End-to-End Flow
-
-Step 1: Start Modal app → Model loads → API is ready.
-
-Step 2: Client script sends code → Model processes it.
-
-Step 3: Response (explanation) is shown to the user.
+Receive and display the explanation in a human-readable format.
