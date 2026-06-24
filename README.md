@@ -7,7 +7,7 @@ The backend is powered by **StarCoder2-15B** deployed on **Modal Labs**.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 - **Python** – Core application
 - **Modal Labs** – Model hosting & API
 - **Transformers (Hugging Face)** – Model loading
